@@ -1,0 +1,30 @@
+<div class="app-navbar">
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <div class="gap"></div>
+            <a mat-button routerLink="/home" href="/home">Home</a>
+            <a mat-button routerLink="/ideas" href="/ideas">Ideas</a>
+            <a mat-button routerLink="/stats" href="/stats">Statistics</a>
+            <a mat-button routerLink="/support" href="/support">Supports</a>
+            <span class="spacer"></span>
+            @if (usrName() && usrName() != "") {
+                <mat-chip color="primary" disabled>{{ usrName() }}</mat-chip>
+            }
+            <button mat-icon-button (click)="openMenu($event)">
+                <mat-icon aria-hidden="false" aria-label="">person</mat-icon>
+            </button>
+            <span [matMenuTriggerFor]="menu" class="menu-trigger"></span>
+            <mat-menu #menu="matMenu" [overlapTrigger]="false">
+                <button mat-menu-item (click)="showprofile($event)">
+                    <mat-icon>person</mat-icon>
+                    <span>Profile</span>
+                </button>
+                <button mat-menu-item (click)="logout($event)">
+                    <mat-icon>logout</mat-icon>
+                    <span>Logout</span>
+                </button>
+            </mat-menu>
+
+        </mat-toolbar-row>
+    </mat-toolbar>
+</div>

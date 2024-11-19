@@ -1,0 +1,49 @@
+<div class="ideas">
+
+
+    <div class="parts">
+        @for (button of buttons; track button) {
+            <button
+                mat-raised-button
+                [color]="button.check?'primary':'secondary'"
+                class="buttons"
+                (click)="btnClick($event, button)"
+            >
+                {{ button.title }}
+            </button>
+        }
+    </div>
+
+    <div class="parts">
+        <form class="fullw">
+            <mat-form-field class="fullw">
+                <mat-label>Search</mat-label>
+                <input matInput placeholder="" value="" [(ngModel)]="searchText" [ngModelOptions]="{standalone: true}">
+            </mat-form-field>
+        </form>
+    </div>
+
+    <div class="parts">
+        @for (idea of ideas; track idea) {
+            <mat-card class="tiles">
+                <mat-card-header>
+                    <mat-card-title>
+                        <div class="title">
+                            <label class="content" [innerHtml]="idea.title | safeHTML"></label>
+                        </div></mat-card-title>
+                </mat-card-header>
+                <!-- img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu" -->
+                <mat-card-content>
+                    <div>
+                        <label class="content" [innerHtml]="idea.content | safeHTML"></label>
+                    </div>
+                </mat-card-content>
+                <!--mat-card-actions>
+                    <button mat-button>LIKE</button>
+                    <button mat-button>SHARE</button>
+                </mat-card-actions-->
+            </mat-card>
+        }
+    </div>
+
+</div>

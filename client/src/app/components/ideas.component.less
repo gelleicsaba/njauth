@@ -1,0 +1,32 @@
+.ideas {
+    label.content {
+        font-size: 0.85em;
+    }
+    div.title {
+        text-decoration: underline;
+        /*margin-bottom: 5px;*/
+    }
+    .tiles {
+        min-width: 75%;
+        min-height: 150px;
+        max-height: 850px;
+        min-width: 300px;
+        max-width: 300px;
+        /*max-width: 400px;*/
+        margin-top: 35px;
+    }
+    .fullw {
+        width: 100%;
+    }
+    div.parts {
+        flex: 1 0 100%;
+        margin: 20px 20px 20px 20px;
+    }
+    .buttons {
+        margin-top: 5px;
+        margin-right: 10px;
+    }
+}
+::ng-deep ideas div.mat-grid-tile-content {
+    align-items:first baseline !important;
+}

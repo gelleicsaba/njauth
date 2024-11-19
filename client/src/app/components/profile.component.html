@@ -1,0 +1,90 @@
+<div class="profile">
+    <mat-grid-list cols="1" rowHeight="860px">
+        <mat-grid-tile>
+            <mat-card class="tiles">
+                <mat-card-content>
+                    <form class="fullw">
+                        <div class="fullw">
+                            <mat-form-field class="fields fullw">
+                                <mat-label>Login name</mat-label>
+                                <input matInput disabled
+                                    placeholder="Login name"
+                                    value=""
+                                    [(ngModel)]="name"
+                                    [ngModelOptions]="{standalone: true}"
+                                    class="fullw"
+                                >
+                            </mat-form-field>
+                        </div>
+                        <div class="fullw">
+                            <mat-form-field class="fields fullw">
+                                <mat-label>E-mail</mat-label>
+                                <input matInput disabled
+                                    placeholder="E-mail"
+                                    value=""
+                                    [(ngModel)]="email"
+                                    [ngModelOptions]="{standalone: true}"
+                                    class="fullw"
+                                >
+                            </mat-form-field>
+                        </div>
+                        <div class="fullw">
+                            <mat-form-field class="fields fullw">
+                                <mat-label>Name</mat-label>
+                                <input matInput
+                                    placeholder="Name"
+                                    value=""
+                                    [(ngModel)]="fullname"
+                                    [ngModelOptions]="{standalone: true}"
+                                    class="fullw"
+                                >
+                            </mat-form-field>
+                        </div>
+                        <div class="fullw">
+                            <mat-form-field class="fields fullw">
+                                <mat-label>Interests</mat-label>
+                                <input matInput
+                                    placeholder="Interests"
+                                    value=""
+                                    [(ngModel)]="interests"
+                                    [ngModelOptions]="{standalone: true}"
+                                    class="fullw"
+                                >
+                            </mat-form-field>
+                        </div>
+                        <div class="fullw">
+                            <mat-form-field class="fields fullw">
+                                <mat-label>Reddit</mat-label>
+                                <input matInput
+                                    placeholder="Reddit"
+                                    value=""
+                                    [(ngModel)]="reddit"
+                                    [ngModelOptions]="{standalone: true}"
+                                    class="fullw"
+                                >
+                            </mat-form-field>
+                        </div>
+                        <div class="fullw">
+
+                                <mat-checkbox
+                                class="example-margin"
+                                [(ngModel)]="publicCheck"
+                                [ngModelOptions]="{standalone: true}"
+                                >
+                                    Public profile (Contact data is visible, except your name)
+                                </mat-checkbox>
+
+                        </div>
+                        <div class="fullw login-btn">
+                            <button mat-button
+                                class="fullw"
+                                (click)="save($event)"
+                            >Save profile</button>
+                            <feeder></feeder>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

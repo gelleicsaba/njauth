@@ -1,0 +1,145 @@
+
+<div class="home">
+    <div>
+        <mat-grid-list cols="2" rowHeight="300px">
+            <mat-grid-tile>
+                <mat-card class="tiles">
+                    <mat-card-header>
+                        <mat-card-title><div class="title">About this site</div></mat-card-title>
+                    </mat-card-header>
+                    <!-- img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu" -->
+                    <mat-card-content>
+                        <div>
+                            <label class="content" [innerHtml]="homeContent | safeHTML"></label>
+                        </div>
+                    </mat-card-content>
+                    <!--mat-card-actions>
+                        <button mat-button>LIKE</button>
+                        <button mat-button>SHARE</button>
+                    </mat-card-actions-->
+                </mat-card>
+
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-card class="tiles">
+                    <mat-card-header>
+                        <mat-card-title><div class="title">Lestest news</div></mat-card-title>
+                    </mat-card-header>
+                    <!-- img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu" -->
+                    <mat-card-content>
+                        <div>
+                            <label class="content" [innerHtml]="newsContent | safeHTML"></label>
+                        </div>
+                    </mat-card-content>
+                    <!--mat-card-actions>
+                        <button mat-button>LIKE</button>
+                        <button mat-button>SHARE</button>
+                    </mat-card-actions-->
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+
+    <div>
+        <mat-grid-list cols="2" rowHeight="300px">
+
+            <mat-grid-tile>
+
+                <mat-card class="tiles">
+                    <mat-card-header>
+                        <mat-card-title>
+                            <div class="title">
+                                A random idea
+                            </div>
+                        </mat-card-title>
+                    </mat-card-header>
+                    <!-- img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu" -->
+                    <mat-card-content>
+                        <div>
+                            <label class="content" [innerHtml]="rndContent.title| safeHTML"></label>
+                            <hr>
+                            <label class="content" [innerHtml]="rndContent.content | safeHTML"></label>
+                        </div>
+                    </mat-card-content>
+                    <!--mat-card-actions>
+                        <button mat-button>LIKE</button>
+                        <button mat-button>SHARE</button>
+                    </mat-card-actions-->
+                </mat-card>
+
+            </mat-grid-tile>
+            <mat-grid-tile>
+
+                <mat-card class="tiles">
+                    <mat-card-header>
+                        <mat-card-title>
+                            <div class="title">
+                                Sign up today to share your ideas.
+                            </div>
+                        </mat-card-title>
+                    </mat-card-header>
+                    <!-- img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu" -->
+                    <mat-card-content>
+                        <div>
+
+                            <input matInput
+                                placeholder="Name"
+                                value=""
+                                [(ngModel)]="name"
+                                [ngModelOptions]="{standalone: true}"
+                                style="width: 150; margin-left: 20px;"
+                            >
+                            <input matInput
+                                placeholder="Email"
+                                value=""
+                                [(ngModel)]="email"
+                                [ngModelOptions]="{standalone: true}"
+                                style="width: 150; margin-left: 20px;"
+                            >
+                        </div>
+                        <div style="margin-top: 10px;">
+
+                            <input matInput type="password"
+                                placeholder="Password"
+                                value=""
+                                [(ngModel)]="pass"
+                                [ngModelOptions]="{standalone: true}"
+                                style="width: 150; margin-left: 20px;"
+                            >
+                            <input matInput type="password"
+                                placeholder="Repeat password"
+                                value=""
+                                [(ngModel)]="pass2"
+                                [ngModelOptions]="{standalone: true}"
+                                style="width: 150; margin-left: 20px;"
+                            >
+                        </div>
+
+                        <div
+                            (mousemove)="onMouseMove($event)" id="box"
+                            style="width: fit-content; block-size: fit-content"
+                        >
+                                <mat-checkbox
+                                    class="example-margin"
+                                    [(ngModel)]="captchaValue"
+                                    [ngModelOptions]="{standalone: true}"
+                                    [disabled]="captchaIsReady()"
+                                >I am human</mat-checkbox>
+                        </div>
+                        <button mat-button
+                            (click)="register($event)"
+                            [disabled]="regDisabled()"
+                            style="width: 100%;"
+                        >Sign up</button>
+                        <feeder></feeder>
+                    </mat-card-content>
+                    <!--mat-card-actions>
+                        <button mat-button>LIKE</button>
+                        <button mat-button>SHARE</button>
+                    </mat-card-actions-->
+                </mat-card>
+
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>

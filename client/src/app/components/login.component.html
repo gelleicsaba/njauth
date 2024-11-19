@@ -1,0 +1,50 @@
+<div class="login">
+    <mat-grid-list cols="1" rowHeight="300px">
+        <mat-grid-tile>
+            <mat-card class="tiles">
+                <!--mat-card-header>
+                    <mat-card-title><div class="title">Login</div></mat-card-title>
+                </mat-card-header-->
+                <!-- img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu" -->
+                <mat-card-content>
+                    <form class="fullw">
+                        <div class="fullw">
+                            <mat-form-field class="fields fullw">
+                                <mat-label>Name</mat-label>
+                                <input matInput
+                                    placeholder="Name"
+                                    value=""
+                                    [(ngModel)]="name"
+                                    [ngModelOptions]="{standalone: true}"
+                                    class="fullw"
+                                >
+                            </mat-form-field>
+                        </div>
+                        <div class="fullw">
+                            <mat-form-field class="fields fullw">
+                                <mat-label>Password</mat-label>
+                                <input type="password" matInput
+                                    value=""
+                                    [(ngModel)]="pass"
+                                    [ngModelOptions]="{standalone: true}"
+                                    class="fullw"
+                                >
+                            </mat-form-field>
+                        </div>
+                        <div class="fullw login-btn">
+                            <button mat-button
+                                class="fullw login-btn"
+                                (click)="loginClick($event)"
+                            >Sign in</button>
+                        </div>
+                    </form>
+                    <feeder></feeder>
+                </mat-card-content>
+                <!--mat-card-actions>
+                    <button mat-button>LIKE</button>
+                    <button mat-button>SHARE</button>
+                </mat-card-actions-->
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
